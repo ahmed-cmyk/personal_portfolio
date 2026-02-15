@@ -1,5 +1,9 @@
 @import 'tailwindcss' source('../');
 
+@theme {
+  --color-regal-blue: #243c5a; 
+}
+
 @layer base {
   *,
   ::after,
@@ -27,4 +31,8 @@
   .using-mouse * {
     outline: none !important;
   }
+}
+
+.btn-normal {
+  @apply p-3 rounded-lg transition-transform duration-200 ease-out hover:-translate-y-1 [box-shadow:4px_4px_10px_rgba(59,130,246,0.3)] cursor-pointer;
 }

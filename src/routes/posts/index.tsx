@@ -1,18 +1,24 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { useState } from 'react';
+import { NoPosts } from '~/components/NoPosts';
+import Post from '~/components/Post';
 
 export const Route = createFileRoute('/posts/')({
   component: Posts,
 })
 
 function Posts() {
-  const loopCount = 10;
+  const [posts, setPosts] = useState([]);
+
+  if (posts.length === 0) {
+    return <NoPosts />
+  }
 
   return (
     <ul>
-      {Array.from(Array(loopCount), (_, index) => (
-        // A unique key is required for each element when looping in React.
-        <li key={index} className='my-2'>
-          <div className="w-64 h-32 bg-blue-500 flex justify-self-center"></div>
+      {posts.map((post, index) => (
+        <li key={index}>
+          <Post />
         </li>
       ))}
     </ul>

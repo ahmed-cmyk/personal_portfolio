@@ -27,6 +27,14 @@ export function NavBar() {
         >
           About
         </Link>
+        <Link
+          to="/contact"
+          activeProps={{ className: "font-bold text-sky-500" }}
+          activeOptions={{ exact: true }}
+          className="px-5 py-2 rounded-full hover:bg-white/20 hover:text-sky-400 transition-all"
+        >
+          Contact
+        </Link>
       </nav>
     </div>
   );

@@ -2,36 +2,36 @@ import { Link } from "@tanstack/react-router";
 
 export function NavBar() {
   return (
-    <div className="flex justify-center mt-4">
-      <nav className="flex gap-2 px-3 py-2 bg-white/5 backdrop-blur-xl border border-white/20 rounded-full shadow-lg">
+    <div className="flex justify-center mt-8 mb-12">
+      <nav className="flex gap-8 text-sm font-medium tracking-wide">
         <Link
           to="/"
-          activeProps={{ className: "font-bold text-sky-500" }}
+          activeProps={{ className: "text-stone-900 dark:text-stone-100" }}
           activeOptions={{ exact: true }}
-          className="px-5 py-2 rounded-full hover:bg-white/20 hover:text-sky-400 transition-all"
+          className="text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors"
         >
           Home
         </Link>
         <Link
           to="/posts"
-          activeProps={{ className: "font-bold text-sky-500" }}
-          className="px-5 py-2 rounded-full hover:bg-white/20 hover:text-sky-400 transition-all"
+          activeProps={{ className: "text-stone-900 dark:text-stone-100" }}
+          className="text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors"
         >
-          Posts
+          Writing
         </Link>
         <Link
           to="/about"
-          activeProps={{ className: "font-bold text-sky-500" }}
+          activeProps={{ className: "text-stone-900 dark:text-stone-100" }}
           activeOptions={{ exact: true }}
-          className="px-5 py-2 rounded-full hover:bg-white/20 hover:text-sky-400 transition-all"
+          className="text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors"
         >
           About
         </Link>
         <Link
           to="/contact"
-          activeProps={{ className: "font-bold text-sky-500" }}
+          activeProps={{ className: "text-stone-900 dark:text-stone-100" }}
           activeOptions={{ exact: true }}
-          className="px-5 py-2 rounded-full hover:bg-white/20 hover:text-sky-400 transition-all"
+          className="text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors"
         >
           Contact
         </Link>

@@ -12,6 +12,7 @@ import { NavBar } from '~/components/NavBar'
 import { NotFound } from '~/components/NotFound'
 import appCss from '~/styles/app.css?url'
 import { seo } from '~/utils/seo'
+import { Footer } from '~/components/Footer'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -46,7 +47,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <NavBar />
-        {children}
+        <div className="flex flex-col min-h-[calc(100vh-100px)]">
+          {children}
+        </div>
+        <Footer />
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
       </body>

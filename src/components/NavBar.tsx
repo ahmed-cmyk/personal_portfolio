@@ -28,12 +28,12 @@ export function NavBar() {
           About
         </Link>
         <Link
-          to="/contact"
+          to="/services"
           activeProps={{ className: "text-stone-900 dark:text-stone-100" }}
           activeOptions={{ exact: true }}
           className="text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors"
         >
-          Contact
+          Services
         </Link>
       </nav>
     </div>

@@ -22,7 +22,7 @@ function Home() {
           <button className="btn-primary">
             View Projects
           </button>
-          <Link to="/contact">
+          <Link to="/services">
             <button className="btn-outline">
               Contact Me
             </button>

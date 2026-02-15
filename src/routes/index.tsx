@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -22,9 +22,11 @@ function Home() {
           <button className="btn-primary">
             View Projects
           </button>
-          <button className="btn-outline">
-            Contact Me
-          </button>
+          <Link to="/contact">
+            <button className="btn-outline">
+              Contact Me
+            </button>
+          </Link>
         </div>
       </div>
       <div className="flex-1 flex justify-center md:justify-end">

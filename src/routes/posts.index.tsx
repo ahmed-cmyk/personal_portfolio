@@ -13,7 +13,7 @@ export const Route = createFileRoute('/posts/')({
 
 function Posts() {
   const { data: posts } = useSuspenseQuery(postsQueryOptions())
-  console.log("Posts found", posts);
+
   if (posts.length === 0) {
     return <NoPosts />
   }

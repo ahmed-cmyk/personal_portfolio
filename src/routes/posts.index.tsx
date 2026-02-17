@@ -19,12 +19,10 @@ function Posts() {
   }
 
   return (
-    <ul>
+    <section className="p-4 w-full">
       {posts.map((post) => (
-        <li key={post.id}>
-          <Post />
-        </li>
+        <Post key={post.id} post={post} />
       ))}
-    </ul>
+    </section>
   );
 }

@@ -8,7 +8,7 @@ export const Route = createFileRoute('/posts')({
 
 function RouteComponent() {
   return (
-    <section className="mt-8 px-4 max-w-2xl mx-auto">
+    <section className="mt-8 px-4 w-3/4 mx-auto">
       <Heading text="Posts" />
       <Outlet />
     </section>

@@ -1,12 +1,12 @@
 /// <reference types="vite/client" />
 import {
   HeadContent,
-  Link,
   Scripts,
-  createRootRoute,
+  createRootRouteWithContext,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
+import type { QueryClient } from '@tanstack/react-query'
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NavBar } from '~/components/NavBar'
 import { NotFound } from '~/components/NotFound'
@@ -14,7 +14,9 @@ import appCss from '~/styles/app.css?url'
 import { seo } from '~/utils/seo'
 import { Footer } from '~/components/Footer'
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient
+}>()({
   head: () => ({
     meta: [
       {

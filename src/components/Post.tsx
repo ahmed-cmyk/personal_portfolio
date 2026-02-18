@@ -1,5 +1,4 @@
-import { Post as PostType } from "~/types";
-import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 interface PostProps {
   post: {
@@ -34,8 +33,9 @@ function Post({ post }: PostProps) {
         </div>
 
         <div className="mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800">
-          <a
-            href={`/posts/${post.id}`}
+          <Link
+            to="/posts/$postSlug"
+            params={{ postSlug: post.slug }}
             className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
           >
             Read more
@@ -52,7 +52,7 @@ function Post({ post }: PostProps) {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

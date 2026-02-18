@@ -14,7 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as PostsRouteRouteImport } from './routes/posts.route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostsIndexRouteImport } from './routes/posts.index'
-import { Route as PostsPostIdRouteImport } from './routes/posts.$postId'
+import { Route as PostsPostSlugRouteImport } from './routes/posts.$postSlug'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -41,9 +41,9 @@ const PostsIndexRoute = PostsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => PostsRouteRoute,
 } as any)
-const PostsPostIdRoute = PostsPostIdRouteImport.update({
-  id: '/$postId',
-  path: '/$postId',
+const PostsPostSlugRoute = PostsPostSlugRouteImport.update({
+  id: '/$postSlug',
+  path: '/$postSlug',
   getParentRoute: () => PostsRouteRoute,
 } as any)
 
@@ -52,14 +52,14 @@ export interface FileRoutesByFullPath {
   '/posts': typeof PostsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/services': typeof ServicesRoute
-  '/posts/$postId': typeof PostsPostIdRoute
+  '/posts/$postSlug': typeof PostsPostSlugRoute
   '/posts/': typeof PostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/services': typeof ServicesRoute
-  '/posts/$postId': typeof PostsPostIdRoute
+  '/posts/$postSlug': typeof PostsPostSlugRoute
   '/posts': typeof PostsIndexRoute
 }
 export interface FileRoutesById {
@@ -68,7 +68,7 @@ export interface FileRoutesById {
   '/posts': typeof PostsRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/services': typeof ServicesRoute
-  '/posts/$postId': typeof PostsPostIdRoute
+  '/posts/$postSlug': typeof PostsPostSlugRoute
   '/posts/': typeof PostsIndexRoute
 }
 export interface FileRouteTypes {
@@ -78,17 +78,17 @@ export interface FileRouteTypes {
     | '/posts'
     | '/about'
     | '/services'
-    | '/posts/$postId'
+    | '/posts/$postSlug'
     | '/posts/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/services' | '/posts/$postId' | '/posts'
+  to: '/' | '/about' | '/services' | '/posts/$postSlug' | '/posts'
   id:
     | '__root__'
     | '/'
     | '/posts'
     | '/about'
     | '/services'
-    | '/posts/$postId'
+    | '/posts/$postSlug'
     | '/posts/'
   fileRoutesById: FileRoutesById
 }
@@ -136,23 +136,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PostsIndexRouteImport
       parentRoute: typeof PostsRouteRoute
     }
-    '/posts/$postId': {
-      id: '/posts/$postId'
-      path: '/$postId'
-      fullPath: '/posts/$postId'
-      preLoaderRoute: typeof PostsPostIdRouteImport
+    '/posts/$postSlug': {
+      id: '/posts/$postSlug'
+      path: '/$postSlug'
+      fullPath: '/posts/$postSlug'
+      preLoaderRoute: typeof PostsPostSlugRouteImport
       parentRoute: typeof PostsRouteRoute
     }
   }
 }
 
 interface PostsRouteRouteChildren {
-  PostsPostIdRoute: typeof PostsPostIdRoute
+  PostsPostSlugRoute: typeof PostsPostSlugRoute
   PostsIndexRoute: typeof PostsIndexRoute
 }
 
 const PostsRouteRouteChildren: PostsRouteRouteChildren = {
-  PostsPostIdRoute: PostsPostIdRoute,
+  PostsPostSlugRoute: PostsPostSlugRoute,
   PostsIndexRoute: PostsIndexRoute,
 }
 

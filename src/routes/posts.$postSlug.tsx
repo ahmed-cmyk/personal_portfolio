@@ -1,6 +1,9 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { postQueryOption } from "~/serverActions/postsActions";
+import remarkHtml from 'remark-html';
+import remarkParse from 'remark-parse'
+import { unified } from 'unified';
 
 export const Route = createFileRoute('/posts/$postSlug')({
     component: Post,
@@ -11,9 +14,20 @@ export const Route = createFileRoute('/posts/$postSlug')({
 
 function Post() {
     const { postSlug: slug } = Route.useParams();
-    const { data: post } = useSuspenseQuery(postQueryOption(slug))
+    const { data: post } = useSuspenseQuery(postQueryOption(slug));
 
-    return <h1>{post.title}</h1>
+    const htmlContent = unified()
+        .use(remarkParse)
+        .use(remarkHtml)
+        .processSync(post.content)
+        .toString();
+
+    return (
+        <article
+            className="prose dark:prose-invert max-w-none leading-[1.5] md:leading-[2]"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+    )
 }
 
 export default Post;

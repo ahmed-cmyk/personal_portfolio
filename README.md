@@ -1,36 +1,71 @@
-# TanStack Start - Basic Example
+# Portfolio & Blog — Built with TanStack Start
 
-This is the basic TanStack Start example, demonstrating the fundamentals of building applications with TanStack Router and TanStack Start.
+This repository contains the source code for my personal portfolio and technical blog, built with TanStack Start.
 
-- [TanStack Router Docs](https://tanstack.com/router)
+The site is a full-stack application designed to:
+- Present my engineering work and technical background
+- Publish long-form technical writing on systems, architecture, and performance
+- Serve as a production-grade example of how I structure modern web applications
 
-It's deployed automagically with Netlify!
+The focus is clarity, performance, and maintainability.
 
-- [Netlify](https://netlify.com/)
+## Architecture Overview
 
-## Start a new project based on this example
+The application is built with:
 
-To start a new project based on this example, run:
+- *Framework*: TanStack Start
+- *Routing*: TanStack Router (file-based routing)
+- *Frontend*: React
+- *Data Fetching & Caching*: React Query
+- *Styling*: Tailwind CSS
+- *Deployment Target*: DigitalOcean (self-managed infrastructure)
 
-```sh
-npx gitpick TanStack/router/tree/main/examples/react/start-basic start-basic
+The project emphasizes:
+
+- Explicit routing and predictable layouts
+- Clear server/client boundaries
+- Declarative data fetching
+- Minimal runtime complexity
+
+This repository is not a scaffold or tutorial example. It is structured intentionally as a production application.
+
+## Development
+
+Install dependencies:
+
+```bash
+pnpm install
 ```
 
-## Getting Started
+Start the development server:
 
-From your terminal:
-
-```sh
-pnpm install
+```bash
 pnpm dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+This runs the app in development mode with hot reload enabled.
 
-## Build
+## Production Build
 
-To build the app for production:
+To generate a production build:
 
-```sh
+```bash
 pnpm build
 ```
+
+This outputs an optimized build suitable for deployment.
+
+## Deployment
+
+The application is intended to be deployed on a DigitalOcean droplet.
+
+At the moment:
+- Deployment is handled manually
+- CI/CD is not yet configured
+
+Planned improvements:
+- Automated builds and deployments
+- CI pipeline for linting and type-checking
+- Optional containerization with Docker
+
+---

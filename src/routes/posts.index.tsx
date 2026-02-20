@@ -1,8 +1,9 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router'
 import { NoPosts } from '~/components/NoPosts';
-import Post from '~/components/Post';
 import { postsQueryOptions } from '~/serverActions/postsActions';
+import Heading from '~/components/Heading';
+import Post from '~/components/Post';
 
 export const Route = createFileRoute('/posts/')({
   component: Posts,
@@ -20,6 +21,7 @@ function Posts() {
 
   return (
     <section className="p-4 w-full">
+      <Heading text="Posts" />
       {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}

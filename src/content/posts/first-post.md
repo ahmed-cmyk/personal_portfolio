@@ -71,4 +71,4 @@ console.log(greet("Neptune"));
 }
 ```
 
-⸻
+---

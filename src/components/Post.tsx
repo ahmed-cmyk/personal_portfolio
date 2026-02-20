@@ -13,7 +13,7 @@ interface PostProps {
 
 function Post({ post }: PostProps) {
   return (
-    <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-zinc-200 dark:border-zinc-800 w-full">
+    <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-zinc-200 dark:border-zinc-800 w-full mb-4">
       <div className="p-6 flex flex-col flex-grow">
         <div className="mb-4">
           <div className="flex justify-between items-start mb-2">

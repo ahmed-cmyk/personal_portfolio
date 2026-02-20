@@ -14,14 +14,14 @@ interface PostProps {
 function Post({ post }: PostProps) {
   return (
     <div className="bg-white dark:bg-zinc-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-zinc-200 dark:border-zinc-800 w-full mb-4">
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col grow">
         <div className="mb-4">
           <div className="flex justify-between items-start mb-2">
             <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 line-clamp-2">
               {post.title}
             </h2>
             {post.createdAt && (
-              <span className="text-sm text-zinc-400 dark:text-zinc-500 ml-4 flex-shrink-0">
+              <span className="text-sm text-zinc-400 dark:text-zinc-500 ml-4 shrink-0">
                 {new Date(post.createdAt).toLocaleDateString(undefined, {
                   year: 'numeric',
                   month: 'long',

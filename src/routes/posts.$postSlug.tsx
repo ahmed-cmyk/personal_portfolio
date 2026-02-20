@@ -28,7 +28,7 @@ function Post() {
 
     return (
         <article
-            className="prose dark:prose-invert max-w-none leading-[1.5] md:leading-[2]"
+            className="prose dark:prose-invert max-w-none"
             dangerouslySetInnerHTML={{ __html: htmlContent }}
         />
     )

@@ -1,11 +1,13 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { postQueryOption } from "~/serverActions/postsActions";
+import rehypeHighlight from "rehype-highlight";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
 import { unified } from "unified";
+import "highlight.js/styles/atom-one-dark.css";
 
 export const Route = createFileRoute('/posts/$postSlug')({
     component: Post,
@@ -19,9 +21,10 @@ function Post() {
     const { data: post } = useSuspenseQuery(postQueryOption(slug));
 
     const htmlContent = String(unified()
-        .use(remarkParse)
+        .use(remarkParse, { fragment: true })
         .use(remarkRehype)
         .use(rehypeSanitize)
+        .use(rehypeHighlight)
         .use(rehypeStringify)
         .processSync(post.content)
     );
